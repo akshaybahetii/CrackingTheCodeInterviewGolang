@@ -14,7 +14,7 @@ func GetPath(b [][]SQ, start Position, path *[]Position) {
 		p := Position{start.x + 1, start.y}
 		*path = append(*path, p)
 		GetPath(b, p, path)
-	} else if start.y+1 < len(b[0]) && !b[start.x][start.y+1].allowed {
+} else if start.y+1 < len(b[0]) && !b[start.x][start.y+1].allowed {
 		p := Position{start.x, start.y + 1}
 		*path = append(*path, p)
 		GetPath(b, p, path)

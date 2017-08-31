@@ -1,0 +1,29 @@
+package main
+
+import "fmt"
+
+func main() {i
+	arr := []int{4, 2, 6, 1, 0, 8}
+	fmt.Println(QucikSort(&arr))
+}
+
+func QucikSort(arr *[]int) {
+	if len(*arr) <= 1 {
+		return
+	}
+	lenA := len(*arr)
+	mid := lenA / 2
+	QucikSort((*arr)[:mid])
+	QucikSort((*arr)[mid+1:])
+	arr1 := (*arr)[:mid]
+	arr2 := (*arr)[mid+1:]
+	for i := 0; i < mid; i++ {
+		if arr1[i] < arr2[i] {
+			(*arr)[2i] = arr1[i]
+			(*arr)[2i+1] = arr2[i]
+		} else {
+			(*arr)[2i] = arr2[i]
+			(*arr)[2i+1] = arr1[i]
+		}
+	}
+}
